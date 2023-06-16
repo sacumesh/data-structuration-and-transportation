@@ -97,7 +97,7 @@ It is ubiquitous in tech:
 
 ## CSV format (2/2)
 
-```.{plain}
+```{.plain}
 id,name,city,school
 0001,Pierre,Paris,EPITA
 0002,Ada,London,Home
@@ -115,7 +115,7 @@ id,name,city,school
 
 . . .
 
-```.{plain}
+```{.plain}
 id,name,city,age,school
 0001,Pierre,Paris,36,EPITA
 0002,Ada,London,,Home
