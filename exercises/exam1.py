@@ -1,35 +1,30 @@
-import requests
+from dataclasses import dataclass
+from typing import List
 import json
+import requests
 
 
-def task1():
-    base_url = "https://api.openweathermap.org/data/2.5/forecast"
-
-    headers = {
-        "Accept": "application/json"
-    }
-
-    # Replace with your own values
-    params = {
-        "q": "Paris,FR",  # City name and country code
-        "appid": "6b302a0dcd0b8cec144fee14eb3468b2"  # Your API key
-    }
-
-    response = requests.get(base_url, params=params, headers=headers)
-    data = response.json()
-
-    # Process the data as needed
-    return json.dumps(data)
 
 
-def write_json_to_file(json_data, filename):
-    with open(filename, 'w') as file:
-        json.dump(json_data, file, indent=2)
 
 
-def task2(data):
-    json_data = json.loads(data)
-    with open("test.json", 'w') as file:
-        json.dump(json_data, file, indent=2)
 
-task2(task1())
+
+
+
+
+
+# latitude = 52.52
+# longitude = 13.41
+# start_date = "2023-07-11"
+# end_date = "2023-07-11"
+#
+#
+# # def write_json_to_file(data: dict, filepath):
+# #     with open(filepath, 'w') as file:
+# #         json.dump(data["forecast"], file, indent=2)
+#
+#
+# forecast_data = get_weather_forecast(latitude, longitude, start_date, end_date)
+#
+# print(forecast_data)
