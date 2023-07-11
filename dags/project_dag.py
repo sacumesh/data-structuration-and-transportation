@@ -5,6 +5,7 @@ from airflow.providers.sqlite.operators.sqlite import SqliteOperator
 
 import weather_service
 
+
 @dag(
     dag_id='project_dag',
     schedule_interval="0 1 * * *",
@@ -37,7 +38,7 @@ def project_dag():
         rows = sqlite_hook.get_records(query)
         print(rows)
 
-    @task()
+    @task
     def write_to_file(data: dict) -> None:
         weather_service.write_to_json_file(data["proc_weather_data"])
 
