@@ -40,9 +40,7 @@ def project_dag():
 
     @task
     def write_to_file(data: dict) -> None:
-        weather_service.write_to_json_file(data["proc_weather_data"])
-
-    drop_table = SqliteOperator(task_id="drop_weather_table", sql="sql/drop_table.sql")
+        weather_service.write_to_json_file(data)
 
     create_table = SqliteOperator(task_id="create_weather_table", sql="sql/create_table.sql")
 
@@ -51,8 +49,8 @@ def project_dag():
 
     data = get_weather(latitude, longitude)
     processed_data = process_weather_data(data)
-    processed_data >> drop_table >> create_table >> insert_with_hook(processed_data) >> read_with_hook()
-    write_to_file(processed_data)
+    processed_data >> create_table >> insert_with_hook(processed_data) >> read_with_hook()
+    write_to_file(data)
 
 
 _ = project_dag()
