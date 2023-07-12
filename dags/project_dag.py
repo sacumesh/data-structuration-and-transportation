@@ -6,6 +6,9 @@ from airflow.providers.sqlite.operators.sqlite import SqliteOperator
 import weather_service
 
 
+# 1. Konara Mudiyanselage Sachiththa Umesh Bandaranayake
+# 2. Sanjana Raparthi
+
 @dag(
     dag_id='project_dag',
     schedule_interval="0 1 * * *",
