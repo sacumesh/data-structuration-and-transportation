@@ -7,7 +7,7 @@ import json
 def read_form_api(latitude, longitude, date) -> Union[Dict, None]:
     url = "https://api.open-meteo.com/v1/forecast"
     headers = {
-        'accept': 'application/vnd.github+json',
+        'accept': 'application/json',
     }
 
     params = {
